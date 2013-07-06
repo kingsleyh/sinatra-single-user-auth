@@ -23,7 +23,7 @@ gem 'sinatra-single-user-auth'
 
 ## Usage (classic style applications)
 
-You just need ot make
+You just need to make sure you pass the params username and password from the login form
 
 ```ruby
 # classic_app.rb
