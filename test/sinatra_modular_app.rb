@@ -15,7 +15,7 @@ class SinatraModularApp < Sinatra::Base
 
   get '/public' do
     if authorized?
-      "hello, #{app.username}"
+      "hello, #{settings.username}"
     else
       "Please login"
     end  
