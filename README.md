@@ -1,5 +1,7 @@
 ## Sinatra Single User Simple Auth Extension
 
+[![Build Status](https://api.travis-ci.org/kingsleyh/sinatra-single-user-auth.png)](https://travis-ci.org/kingsleyh/sinatra-single-user-auth)
+
 Sinatra extension with methods and routes for dealing with simple, single user authorization (username and password)
 
 ## Background
