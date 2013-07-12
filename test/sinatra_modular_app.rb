@@ -8,6 +8,7 @@ class SinatraModularApp < Sinatra::Base
   set :username, 'username'
   set :password, 'password'
   set :home, '/'
+  set :context, '/'
 
   get '/' do
     "hello, i'm root"

@@ -12,18 +12,18 @@ module Sinatra
           session[:arni] = true
           redirect_back_or_default(settings.home)
         end
-        redirect to('/login')
+        redirect to("#{settings.context}login")
       end
 
       def logout!
         session.clear
-        redirect to('/')
+        redirect to(settings.context)
       end
 
       def protected!
         unless authorized?
           store_location
-          redirect to('/login')
+          redirect to("#{settings.context}login")
         end
       end
 
@@ -47,16 +47,17 @@ module Sinatra
       app.set :username, 'username'
       app.set :password, 'password'
       app.set :home, '/'
+      app.set :context, '/'
 
-      app.post '/login/?' do
+      app.post "#{app.context}login/?" do
         auth!(params[:password],params[:username])
       end
 
-      app.delete '/logout/?' do
+      app.delete "#{app.context}logout/?" do
         logout!
       end
 
-      app.get '/logout/?' do
+      app.get "#{app.context}logout/?" do
         logout!
       end
     end
